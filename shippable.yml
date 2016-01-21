@@ -17,10 +17,10 @@ env:
 
 build:
   pre_ci:
-    - docker build --rm -t=shippabledocker/vidya_sample_node .
+    - docker build --rm -t=varshaarun/varsha_node_newbuild .
 
   pre_ci_boot:
-    image_name: shippabledocker/vidya_sample_node
+    image_name: varshaarun/varsha_sample_node_newbuild
     image_tag: latest
     pull: false
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
@@ -30,7 +30,7 @@ build:
     - ls -al
 
   post_ci:
-    - docker push shippabledocker/vidya_sample_node
+    - docker push varshaarun/varsha_sample_node_newbuild
 
   smoke_test:
     - sudo ls /
@@ -42,7 +42,7 @@ deploy:
 
 integrations:
   notification:
-    - integrationName: "vidya-slack"
+    - integrationName: "slack notify"
       type: slack
       recipients:
         - newbuildsystem
@@ -56,7 +56,7 @@ integrations:
     
 
   hub:
-    - integrationName: "shippable-docker"
+    - integrationName: "docker-varshaarun"
       type: docker
       branches:
         only:
