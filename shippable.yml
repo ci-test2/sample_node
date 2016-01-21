@@ -42,10 +42,10 @@ deploy:
 
 integrations:
   notification:
-    - integrationName: "slack notify"
+    - integrationName: "slackrandom"
       type: slack
       recipients:
-        - newbuildsystem
+        - random
       branches:
         only:
           - master
@@ -55,7 +55,7 @@ integrations:
       on_pull_request: always
     
   hub:
-    - integrationName: "docker-varshaarun"
+    - integrationName: "varshaarundocker"
       type: docker
       branches:
         only:
