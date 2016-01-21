@@ -20,7 +20,7 @@ build:
     - docker build --rm -t=varshaarun/varsha_node_newbuild .
 
   pre_ci_boot:
-    image_name: varshaarun/varsha_sample_node_newbuild
+    image_name: varshaarun/varsha_node_newbuild
     image_tag: latest
     pull: false
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
@@ -30,7 +30,7 @@ build:
     - ls -al
 
   post_ci:
-    - docker push varshaarun/varsha_sample_node_newbuild
+    - docker push varshaarun/varsha_node_newbuild
 
   smoke_test:
     - sudo ls /
