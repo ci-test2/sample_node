@@ -54,7 +54,6 @@ integrations:
       on_failure: always
       on_pull_request: always
     
-
   hub:
     - integrationName: "docker-varshaarun"
       type: docker
